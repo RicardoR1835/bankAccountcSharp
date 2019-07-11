@@ -1,0 +1,8 @@
+@model bankAccount_cSharp.Models.Transaction;
+<form action="/transaction" method="post">
+    <label>Transaction</label>
+    <input type="number" class="form-control col-4" asp-for="CurrentBalance">
+    <span style="color: red;" asp-validation-for="CurrentBalance"></span>
+    <br>
+    <input type="submit" value="Take Action" class="btn btn-primary">
+</form>

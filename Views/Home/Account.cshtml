@@ -1,0 +1,38 @@
+@using bankAccount_cSharp.Models;
+@model List<Transaction>
+
+<br>
+
+<h1>Welcome @ViewBag.loggedIn.FName</h1> 
+
+<partial name="TransactionPartial"/>
+<br>
+<p class="sp">Current Balance:</p> <p class="displayAmount">@ViewBag.Total</p>
+<div class="container">
+    
+    <div class="actions">
+        <table class="table">
+    <thead class="thead-light text-center">
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+            @foreach(var x in @ViewBag.Transactions)
+            {
+                <tr>
+                <th scope="row">@i</th>
+                <td>@x.CurrentBalance</td>
+                <td>@x.CreatedAt</td>
+                </tr>
+                i++;
+            }
+        }
+    </tbody>
+    </table> 
+    </div>
+</div>
